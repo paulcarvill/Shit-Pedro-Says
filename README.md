@@ -7,6 +7,8 @@
 	bundle
 	rake db:migrate
 	rake db:seed
+	export shituser=foo // for access to the admin pages
+	export shitpass=bar // for access to the admin pages
 	rails server
 	0.0.0.0:3000
 
