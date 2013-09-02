@@ -1,0 +1,27 @@
+<h1>Listing shits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shits.each do |shit| %>
+      <tr>
+        <td><%= shit.content %></td>
+        <td><%= link_to 'Show', admin_shit_path(shit) %></td>
+        <td><%= link_to 'Edit', edit_admin_shit_path(shit) %></td>
+        <td><%= link_to 'Destroy', admin_shit_path(shit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shit', new_admin_shit_path %>

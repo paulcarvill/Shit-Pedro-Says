@@ -1,28 +1,23 @@
-== README
+#To run:
+	git clone ...
+	bundle
+	rake db:migrate
+	rake db:seed
+	rails server
+	0.0.0.0:3000
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#All Pedro's shit:
+	http://0.0.0.0:3000/shits/
+	http://0.0.0.0:3000/shits.json
 
-Things you may want to cover:
+#Single Pedro shit:
+	http://0.0.0.0:3000/shits/1
+	http://0.0.0.0:3000/shits/1.json
 
-* Ruby version
+#Admin shit:
+	http://0.0.0.0:3000/admin
+	http://0.0.0.0:3000/admin/shits/1
+	http://0.0.0.0:3000/admin/shits/1/edit
+	DELETE http://0.0.0.0:3000/admin/shits/1
+	http://0.0.0.0:3000/admin/shits/new
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

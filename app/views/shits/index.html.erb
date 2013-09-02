@@ -1,0 +1,23 @@
+<h1>Listing shits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shits.each do |shit| %>
+      <tr>
+        <td><%= shit.content %></td>
+        <td><%= link_to 'Show', shit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
