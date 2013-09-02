@@ -23,3 +23,7 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'ember-rails'
+gem 'ember-source', '1.0.0' # or the version you need
+gem 'handlebars-source', '~> 1.0.12'

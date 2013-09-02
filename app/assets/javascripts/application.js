@@ -12,3 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require shit_pedro_says
+
+ShitPedroSays = Ember.Application.create();
