@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -26,7 +28,7 @@ shits = Shit.create([
 	{ content: 'I ordered pizza last night and ate it in bed. Woke up next to it.' },
 	{ content: 'American Football is for quims.' },
 	{ content: '"Pedro this is your water." "Well not really, it\'s been here since this morning and it\'s gone off"' },
-	{ content: 'when i was taking a shower this morning i pretended i was having a massive fucking go at the ux/design in the morning scrum, like i said everything and then after everyone clapped lol. i even started shaking because i got nervous then i said to myself, ok, calm down… it\'s not real' },
+	{ content: 'When i was taking a shower this morning I pretended I was having a massive fucking go at the UX/design in the morning scrum, like I said everything and then after everyone clapped LOL. I even started shaking because I got nervous then I said to myself, OK, calm down… it\'s not real' },
 	{ content: '"Pedro, do you use the lift?" "Yeah, only to go up though"' },
 	{ content: 'I\'m gonna prepend that bitch.' },
 	{ content: 'Yuri went to give me a high 5 but his tiny little rat nail caught my nose.' },
@@ -45,7 +47,7 @@ shits = Shit.create([
 	{ content: 'I had a cold shower, the coldest shower ever man; couldn\'t even breathe' },
 	{ content: 'What are you shaking your little small head for?' },
 	{ content: 'I can tell it wasn\'t you because he hasn\'t got a white beard. Oh, you haven\'t got a white beard' },
-	{ content: 'When we\'re doing a delivery, we need to stick together as a team" [walking around, drinking beer]' },	
+	{ content: 'When we\'re doing a delivery, we need to stick together as a team" [walking around, drinking beer]' },
 	{ content: 'Man, even if you were raped in prison, it wouldn\'t take you that long to recover' },
 	{ content: 'The thing is with those old devices, is that the only people who have them are stupid little shits who\'ll never buy anything online anyway' },
 	{ content: 'What are you gonna do with this list, man?" "If you make any money on it, I want a fucking percentage' },

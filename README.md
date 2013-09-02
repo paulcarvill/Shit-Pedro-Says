@@ -1,3 +1,7 @@
+#Requirements
+	Ruby 2.0.0
+	// Heroku's default Ruby is now 2.0.0 so let's go with it
+
 #To run:
 	git clone ...
 	bundle
