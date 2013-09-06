@@ -1,4 +1,3 @@
-json.array!(@shits) do |shit|
-  json.extract! shit, :content
-  json.url shit_url(shit, format: :json)
+json.shits do
+  json.array! @shits
 end

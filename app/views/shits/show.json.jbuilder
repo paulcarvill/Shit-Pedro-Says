@@ -1,1 +1,4 @@
-json.extract! @shit, :content, :created_at, :updated_at
+json.set! :shit do
+  json.set! :content, @shit.content
+  json.set! :id, @shit.id
+end

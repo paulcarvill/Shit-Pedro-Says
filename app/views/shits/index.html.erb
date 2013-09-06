@@ -1,12 +1,15 @@
 <h1>Shit Pedro Says</h1>
 
-<table>
-  <tbody>
-    <% @shits.each do |shit| %>
-      <tr>
-        <td><%= shit.content %></td>
-        <td><%= link_to 'Show', shit %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<script type="text/x-handlebars" data-template-name="shits">
+  <ul id="todo-list">
+  {{#each}}
+    <li>
+      <p>{{content}}</p>
+    </li>
+  {{/each}}
+  </ul>
+</script>
+
+<script type="text/x-handlebars" data-template-name="shit">
+    {{ content.content }}
+</script>
