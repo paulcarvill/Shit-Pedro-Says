@@ -1,10 +1,23 @@
-<p id="notice"><%= notice %></p>
+<section>
+  <h1>Shit Pedro Says</h1>
+  <div id="shit">
+    <p>
+    <%= @shit.content %>
+    </p>
+    <p><%= link_to("Previous", @shit.prev) if @shit.prev %></p>
+    <p><%= link_to("Next", @shit.next) if @shit.next %></p>
+  </div>
+</section>
 
-<p>
-  <%= @shit.content %>
-</p>
+<% content_for :jsapp do %>
+<script type="text/javascript">
 
-<p><%= link_to("Previous", @shit.prev) if @shit.prev %></p>
-<p><%= link_to("Next", @shit.next) if @shit.next %></p>
+  $(function() {
 
-<%= link_to 'All of Pedro\'s Shit', shits_path %>
+    $('#shit').empty();
+
+    window.router = new ShitPedroSays.Routers.ShitsRouter({shits: <%= @shits.shuffle.to_json.html_safe -%>});
+    Backbone.history.start( { pushState : true });
+  });
+</script>
+<% end %>
