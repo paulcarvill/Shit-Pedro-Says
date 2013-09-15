@@ -17,7 +17,7 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
     $(@el).append(@nextTemplate( { 'id' : modelnext.get('id') } )) if modelnext
 
     # load in the images for the slideshow
-    imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true"></div>');
+    imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
     for img in window.router.images
       imgcycle.append('<img src="' + img + '" />');

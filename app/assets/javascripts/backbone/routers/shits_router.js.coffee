@@ -49,6 +49,7 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     $('html').css('background-color', @colours[@col]);
 
     @view = new ShitPedroSays.Views.Shits.ShowView(model: @shits.at(0), colour: @colours[@col])
+
     $("#shit").html(@view.render().el)
 
     if @col == @colours.length-1
@@ -66,6 +67,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     shit = @shits.get(id)
 
     Backbone.history.navigate('/shits/' + id, true);
+
+    document.title = "Shit Pedro Says: " + shit.get('content');
 
     # send view new colour
     @view = new ShitPedroSays.Views.Shits.ShowView(model: shit, colour: @colours[@col])
