@@ -13,6 +13,7 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
 
   colours: ["#E1C852", "#5D78A4", "#D9BF41", "#C45BC2", "#9542B6", "#6342B4", "#4963B5", "#4B95B5", "#4963B5"],
   col: 0,
+  images: ['/assets/960x720/1.jpg', '/assets/960x720/2.jpg'];
 
   newShit: ->
     @view = new ShitPedroSays.Views.Shits.NewView(collection: @shits)
@@ -32,6 +33,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
 
   show: (id) ->
 
+    $('#imgs').hide();
+    
     $('html').css('background-color', @colours[@col]);
 
     shit = @shits.get(id)

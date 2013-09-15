@@ -6,18 +6,11 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
   events:
     "click .next": "navigate"
+    "mouseover .next": "cycleImages"
+    "mouseout .next": "stopCycleImages"
 
   render: ->
-
-    
-
-    #send @options.colour to this template
-
     $(@el).html(@template(@model.toJSON() ))
-
-
-
-
 
     modelnext = @model.collection.next(@model)
 
@@ -28,3 +21,23 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
   navigate: (e) ->
     e.preventDefault()
     window.router.show( @model.collection.next(@model).get('id') )
+
+  cycleImages: ->
+    
+    # loader for images loads them into an array
+
+    # we can check the length of the array to make sure they're all loaded
+
+    # or maybe put load events on image src?
+
+    # once they're all loaded, enable background switching
+
+    # background switching rapidly loops between pedro and shit by replacing background-image
+
+    #console.log(window.router.images)
+    $('#imgs').show();
+    $('.cycle-slideshow').cycle('resume');
+
+  stopCycleImages: ->
+    $('#imgs').hide();
+    $('.cycle-slideshow').cycle('pause');

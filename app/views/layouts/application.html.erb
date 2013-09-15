@@ -8,11 +8,28 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="content">
+  <div id="imgs" class="cycle-slideshow" data-cycle-timeout="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true">
+    <img src="/assets/960x720/1.jpg" />
+    <img src="/assets/960x720/2.jpg" />
+    <img src="/assets/960x720/3.jpg" />
+    <img src="/assets/960x720/4.jpg" />
+    <img src="/assets/960x720/5.jpg" />
+    <img src="/assets/960x720/6.jpg" />
+    <img src="/assets/960x720/7.jpg" />
+    <img src="/assets/960x720/8.jpg" />
+    <img src="/assets/960x720/9.jpg" />
+    <img src="/assets/960x720/10.jpg" />
+  </div>
+
+  <%= yield %>
+</div>
 
 <%= javascript_include_tag "application" %>
 
 <%= yield :jsapp %>
+
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
 
 </body>
 </html>
