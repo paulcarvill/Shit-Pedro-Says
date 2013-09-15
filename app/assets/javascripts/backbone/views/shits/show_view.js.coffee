@@ -24,6 +24,8 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
     $('#content').append(imgcycle);
 
+    imgcycle.cycle();
+
     return this
 
   navigate: (e) ->
