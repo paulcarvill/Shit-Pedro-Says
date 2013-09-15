@@ -6,6 +6,7 @@ class ShitsController < ApplicationController
   # GET /shits.json
   def index
     @shits = Shit.all
+    @shit = Shit.last
   end
 
   # GET /shits/1
