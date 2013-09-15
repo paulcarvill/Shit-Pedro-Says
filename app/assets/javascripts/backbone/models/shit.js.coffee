@@ -15,12 +15,18 @@ class ShitPedroSays.Collections.ShitsCollection extends Backbone.Collection
   url: '/shits'
 
   next: (model) ->
+    console.log(model)
     i = this.at(this.indexOf(model))
     
     if undefined == i || i < 0
       return false
 
-    return this.at(this.indexOf(model) + 1)
+    console.log(this.at(this.indexOf(model) + 1));
+    
+    if this.at(this.indexOf(model) + 1)
+      return this.at(this.indexOf(model) + 1)
+    else
+      return this.at(0)
 
   prev: (model) ->
     i = this.at(this.indexOf(model))
