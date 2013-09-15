@@ -69,6 +69,10 @@ h1, p {
   font-weight: 900;
 }
 
+.woop {
+  color: #fff;
+}
+
 .next {
   color: #fff;
   font-size: 1em;
@@ -77,10 +81,46 @@ h1, p {
   border: 4px solid #fff;
   padding: 0.5em 1em;
   line-height: 4em;
+  cursor: pointer;
 }
 
-  @media (max-width: 600px) {
-    h1, p {
-      font-size: 2em;
-    }
+@media (max-width: 1032px) and (min-width: 601px) {
+  #content {
+    width: 98%;
   }
+
+  h1, p {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  #content {
+    display: block;
+    margin-top: 60px;
+  }
+
+  section {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 401px) {
+  #content {
+    width: 98%;
+  }
+
+  h1, p {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 400px) {
+  #content {
+    width: 98%;
+  }
+
+  h1, p {
+    font-size: 1em;
+  }
+}

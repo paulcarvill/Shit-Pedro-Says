@@ -20,6 +20,10 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
   navigate: (e) ->
     e.preventDefault()
+
+    # make the heading black again because we clicked while hovering
+    $('h1').toggleClass('woop');
+
     window.router.show( @model.collection.next(@model).get('id') )
 
   cycleImages: ->
@@ -35,9 +39,12 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
     # background switching rapidly loops between pedro and shit by replacing background-image
 
     #console.log(window.router.images)
+
     $('#imgs').show();
+    $('h1').toggleClass('woop');
     $('.cycle-slideshow').cycle('resume');
 
   stopCycleImages: ->
     $('#imgs').hide();
     $('.cycle-slideshow').cycle('pause');
+    $('h1').toggleClass('woop');

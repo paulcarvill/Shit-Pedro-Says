@@ -33,8 +33,10 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
 
   show: (id) ->
 
+    # hide the pedro images when we load a new Shit in
     $('#imgs').hide();
-    
+
+    # set background colour to be next one in our array
     $('html').css('background-color', @colours[@col]);
 
     shit = @shits.get(id)
