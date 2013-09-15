@@ -13,7 +13,6 @@ class ShitsController < ApplicationController
   # GET /shits/1.json
   def show
     @shits = Shit.all
-    
   end
 
   # GET /shits/new

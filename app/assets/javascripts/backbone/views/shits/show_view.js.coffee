@@ -8,7 +8,16 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
     "click .next": "navigate"
 
   render: ->
+
+    
+
+    #send @options.colour to this template
+
     $(@el).html(@template(@model.toJSON() ))
+
+
+
+
 
     modelnext = @model.collection.next(@model)
 

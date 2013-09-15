@@ -11,25 +11,40 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     "shits/.*"        : "index"
     ".*"        : "index"
 
+  colours: ["#E1C852", "#5D78A4", "#D9BF41", "#C45BC2", "#9542B6", "#6342B4", "#4963B5", "#4B95B5", "#4963B5"],
+  col: 0,
+
   newShit: ->
     @view = new ShitPedroSays.Views.Shits.NewView(collection: @shits)
     $("#shit").html(@view.render().el)
 
   index: ->
-    #@view = new ShitPedroSays.Views.Shits.IndexView(shits: @shits)
-    
     # show the latest Shit
-    @view = new ShitPedroSays.Views.Shits.ShowView(model: @shits.at(0))
+
+    $('html').css('background-color', @colours[@col]);
+
+    @view = new ShitPedroSays.Views.Shits.ShowView(model: @shits.at(0), colour: @colours[@col])
     $("#shit").html(@view.render().el)
 
+    if @col == @colours.length-1
+      @col = 0
+    else @col++
+
   show: (id) ->
-    console.log('in show');
+
+    $('html').css('background-color', @colours[@col]);
+
     shit = @shits.get(id)
 
     Backbone.history.navigate('/shits/' + id, true);
 
-    @view = new ShitPedroSays.Views.Shits.ShowView(model: shit)
+    # send view new colour
+    @view = new ShitPedroSays.Views.Shits.ShowView(model: shit, colour: @colours[@col])
     $("#shit").html(@view.render().el)
+
+    if @col == @colours.length-1
+      @col = 0
+    else @col++
 
   edit: (id) ->
     shit = @shits.get(id)
