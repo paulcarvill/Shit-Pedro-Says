@@ -16,6 +16,14 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
     $(@el).append(@nextTemplate( { 'id' : modelnext.get('id') } )) if modelnext
 
+    # load in the images for the slideshow
+    imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true"></div>');
+
+    for img in window.router.images
+      imgcycle.append('<img src="' + img + '" />');
+
+    $('#content').append(imgcycle);
+
     return this
 
   navigate: (e) ->
@@ -27,18 +35,6 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
     window.router.show( @model.collection.next(@model).get('id') )
 
   cycleImages: ->
-    
-    # loader for images loads them into an array
-
-    # we can check the length of the array to make sure they're all loaded
-
-    # or maybe put load events on image src?
-
-    # once they're all loaded, enable background switching
-
-    # background switching rapidly loops between pedro and shit by replacing background-image
-
-    #console.log(window.router.images)
 
     $('#imgs').show();
     $('h1').toggleClass('woop');

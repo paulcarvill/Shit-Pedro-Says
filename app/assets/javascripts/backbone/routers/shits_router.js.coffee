@@ -13,7 +13,31 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
 
   colours: ["#E1C852", "#5D78A4", "#D9BF41", "#C45BC2", "#9542B6", "#6342B4", "#4963B5", "#4B95B5", "#4963B5"],
   col: 0,
-  images: ['/assets/960x720/1.jpg', '/assets/960x720/2.jpg'];
+  images: ['/images/960x720/1.jpg',
+          '/images/960x720/2.jpg',
+          '/images/960x720/3.jpg',
+          '/images/960x720/4.jpg',
+          '/images/shit/1.jpg',
+          '/images/960x720/5.jpg',
+          '/images/960x720/6.jpg',
+          '/images/960x720/7.jpg',
+          '/images/960x720/8.jpg',
+          '/images/960x720/9.jpg',
+          '/images/960x720/10.jpg',
+          '/images/960x641/1.jpg',
+          '/images/960x641/2.jpg',
+          '/images/shit/2.jpg',
+          '/images/960x641/3.jpg',
+          '/images/960x641/4.jpg',
+          '/images/960x641/5.jpg',
+          '/images/960x641/6.jpg',
+          '/images/shit/3.jpg',
+          '/images/960x641/7.jpg',
+          '/images/960x641/8.jpg',
+          '/images/960x641/9.jpg',
+          '/images/shit/4.jpg',
+          '/images/960x641/10.jpg',
+          '/images/960x641/11.jpg'],
 
   newShit: ->
     @view = new ShitPedroSays.Views.Shits.NewView(collection: @shits)
