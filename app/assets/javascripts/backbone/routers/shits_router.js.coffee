@@ -39,11 +39,24 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
           '/images/960x641/10.jpg',
           '/images/960x641/11.jpg'],
 
+  imagesLoaded: false,
+
   newShit: ->
     @view = new ShitPedroSays.Views.Shits.NewView(collection: @shits)
     $("#shit").html(@view.render().el)
 
   index: ->
+    if !@imagesLoaded
+      imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
+
+      for img in @images
+        imgcycle.append('<img src="' + img + '" />');
+
+      $('#content').append(imgcycle);
+
+      imgcycle.cycle();
+      @imagesLoaded = true;
+
     # show the latest Shit
 
     $('html').css('background-color', @colours[@col]);
@@ -57,6 +70,18 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     else @col++
 
   show: (id) ->
+
+    # load in the images for the slideshow only once
+    if !@imagesLoaded
+      imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
+
+      for img in @images
+        imgcycle.append('<img src="' + img + '" />');
+
+      $('#content').append(imgcycle);
+
+      imgcycle.cycle();
+      @imagesLoaded = true;
 
     # hide the pedro images when we load a new Shit in
     $('#imgs').hide();
