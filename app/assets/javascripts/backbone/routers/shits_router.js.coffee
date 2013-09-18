@@ -39,6 +39,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
           '/images/960x641/10.jpg',
           '/images/960x641/11.jpg'],
 
+  imageTimes: [150, 150, 150, 150, 300, 150, 150, 150, 150, 150, 150, 150, 150, 300, 150, 150, 150, 150, 300, 150, 150, 150, 300, 150, 150],
+
   imagesLoaded: false,
 
   newShit: ->
@@ -49,8 +51,9 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     if !@imagesLoaded
       imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
-      for img in @images
-        imgcycle.append('<img src="' + img + '" />');
+      for img,index in @images
+        console.log(img, index)
+        imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>');
 
       $('#content').append(imgcycle);
 
