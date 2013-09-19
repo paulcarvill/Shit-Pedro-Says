@@ -52,7 +52,6 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
       imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
       for img,index in @images
-        console.log(img, index)
         imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>');
 
       $('#content').append(imgcycle);
