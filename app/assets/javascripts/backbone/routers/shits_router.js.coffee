@@ -47,8 +47,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     if !@imagesLoaded
       imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
-      for img,index in @images
-        imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>');
+      # loop through images and append them to the DOM witt extended timeout for Shit pics
+      imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @images
 
       $('#content').append(imgcycle);
       imgcycle.cycle();
@@ -66,8 +66,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     if !@imagesLoaded
       imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
-      for img,index in @images
-        imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>');
+      # loop through images and append them to the DOM witt extended timeout for Shit pics
+      imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @images
 
       $('#content').append(imgcycle);
       imgcycle.cycle();
