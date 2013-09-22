@@ -48,7 +48,7 @@ Shit.create([
   { :content => "Put Radio 3 on man", :created_at => "2013-09-06 11:17:10", :updated_at => "2013-09-06 11:17:10" },
   { :content => "That ain't a bird, man, it's a pigeon", :created_at => "2013-09-06 11:17:10", :updated_at => "2013-09-06 11:17:10" },
   { :content => "When I'm single I'm totally gonna carry a skippingrope around with me", :created_at => "2013-09-06 11:17:10", :updated_at => "2013-09-06 11:17:10" },
-  { :content => "I wonder how much Yahoo spend on their new logo. Fucking unbelievable!!! Give the money to starving kids you cunts", :created_at => "2013-09-06 11:17:10", :updated_at => "2013-09-06 11:17:10" }
+  { :content => "I wonder how much Yahoo spent on their new logo. Fucking unbelievable!!! Give the money to starving kids you cunts", :created_at => "2013-09-06 11:17:10", :updated_at => "2013-09-06 11:17:10" }
 ])
 
 

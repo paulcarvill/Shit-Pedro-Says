@@ -15,7 +15,7 @@
   $(function() {
 
     new ShitPedroSays.Views.Heading.ShowView( { el : $('h1') });
-
+    window.portrait = ((window.innerHeight / window.innerWidth) > 1.15);
     window.router = new ShitPedroSays.Routers.ShitsRouter({shits: <%= @shits.shuffle.to_json.html_safe -%>});
     Backbone.history.start( { pushState : true });
   });

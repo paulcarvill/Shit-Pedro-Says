@@ -1,9 +1,7 @@
 <section>
   <h1>Shit Pedro Says</h1>
   <div class="forNoJs">
-    <p>
-    <%= @shits.last.content %>
-    </p>
+    <%= simple_format(@shits.last.content) %>
     <p><%= link_to("Previous", @shits.last.prev) %></p>
   </div>
   <div id="shit">
