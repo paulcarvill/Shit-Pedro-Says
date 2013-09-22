@@ -2,8 +2,6 @@ class ShitsController < ApplicationController
   
   before_action :set_shit, only: [:show]
 
-  caches_page :index, :show
-
   def index
     @shits = Shit.all.order('id ASC')
   end
