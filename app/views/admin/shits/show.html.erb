@@ -5,9 +5,6 @@
   <%= @shit.content %>
 </p>
 
-<p><%= link_to("Previous", @shit.prev) if @shit.prev %></p>
-<p><%= link_to("Next", @shit.next) if @shit.next %></p>
-
 
 <%= link_to 'Edit', edit_admin_shit_path(@shit) %> |
 <%= link_to 'All of Pedro\'s Shit', admin_shits_path %>

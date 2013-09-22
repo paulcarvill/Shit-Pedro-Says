@@ -4,12 +4,10 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     @shits.reset options.shits
 
   routes:
-    "shits/new"      : "newShit"
-    "shits/index"    : "index"
-    "shits/:id/edit" : "edit"
+    "shits/index"    : "show"
     "shits/:id"      : "show"
-    "shits/.*"        : "index"
-    ".*"        : "index"
+    "shits/.*"       : "show"
+    ".*"             : "show"
 
   colours: ["#E1C852", "#5D78A4", "#D9BF41", "#C45BC2", "#9542B6", "#6342B4", "#4963B5", "#4B95B5", "#4963B5"],
   col: 0,
@@ -39,35 +37,32 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
           '/images/960x641/10.jpg',
           '/images/960x641/11.jpg'],
 
-  imageTimes: [150, 150, 150, 150, 300, 150, 150, 150, 150, 150, 150, 150, 150, 300, 150, 150, 150, 150, 300, 150, 150, 150, 300, 150, 150],
+  portraitImages: ['/images/portrait/960x641/1.jpg',
+          '/images/portrait/960x641/2.jpg',
+          '/images/portrait/960x641/3.jpg',
+          '/images/portrait/960x641/4.jpg',
+          '/images/portrait/960x641/5.jpg',
+          '/images/portrait/960x641/6.jpg',
+          '/images/portrait/960x641/7.jpg',
+          '/images/portrait/960x641/8.jpg',
+          '/images/portrait/960x641/9.jpg',
+          '/images/portrait/960x641/10.jpg',
+          '/images/portrait/960x641/11.jpg'],
+
+  imageTimes: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
 
   imagesLoaded: false,
 
-  index: ->
-    if !@imagesLoaded
-      imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
-
-      # loop through images and append them to the DOM witt extended timeout for Shit pics
-      imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @images
-
-      $('#content').append(imgcycle);
-      imgcycle.cycle();
-      @imagesLoaded = true;
-
-    $('html').css('background-color', @colours[@col]);
-    @view = new ShitPedroSays.Views.Shits.ShowView(model: @shits.at(0), colour: @colours[@col])
-    $("#shit").html(@view.render().el)
-
-    if @col == @colours.length-1
-      @col = 0
-    else @col++
-
   show: (id) ->
     if !@imagesLoaded
-      imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="150" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
+      imgcycle = $('<div id="imgs" class="cycle-slideshow" data-cycle-timeout="1" data-cycle-speed="1" data-cycle-paused="true" data-cycle-fx="none" data-cycle-loader="true" data-cycle-log="false"></div>');
 
-      # loop through images and append them to the DOM witt extended timeout for Shit pics
-      imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @images
+      if !window.portrait
+        # loop through images and append them to the DOM witt extended timeout for Shit pics
+        imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @images
+
+      else
+        imgcycle.append('<img src="' + img + '" data-cycle-timeout="' + window.router.imageTimes[index] + '" ' + '/>') for img, index in @portraitImages
 
       $('#content').append(imgcycle);
       imgcycle.cycle();
@@ -76,11 +71,16 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     # hide the pedro images when we load a new Shit in
     $('#imgs').hide();
     $('html').css('background-color', @colours[@col]);
-    shit = @shits.get(id)
+    
+    # get requested Shit from collection, or load most recent
+    if id == undefined
+      shit = @shits.at(0)
+    else
+      shit = @shits.get(id)
 
-    Backbone.history.navigate('/shits/' + id, true);
-
-    document.title = "Shit Pedro Says: " + shit.get('content');
+    if id != undefined
+      Backbone.history.navigate('/shits/' + shit.id, true);
+      document.title = "Shit Pedro Says: " + shit.get('content');
 
     # send view new colour
     @view = new ShitPedroSays.Views.Shits.ShowView(model: shit, colour: @colours[@col])
@@ -89,9 +89,3 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     if @col == @colours.length-1
       @col = 0
     else @col++
-
-  edit: (id) ->
-    shit = @shits.get(id)
-
-    @view = new ShitPedroSays.Views.Shits.EditView(model: shit)
-    $("#shit").html(@view.render().el)

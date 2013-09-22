@@ -16,11 +16,11 @@ body, div, h1, h2, h3, p {
 html {
   height: 100%;
   background: #E1C852;
-  -webkit-transition: background-color 0.5s linear;
-  -moz-transition: background-color 0.5s linear;
-  -ms-transition: background-color 0.5s linear;
-  -o-transition: background-color 0.5s linear;
-  transition: background-color 0.5s linear;
+  -webkit-transition: background-color 1.0s linear;
+  -moz-transition: background-color 1.0s linear;
+  -ms-transition: background-color 1.0s linear;
+  -o-transition: background-color 1.0s linear;
+  transition: background-color 1.0s linear;
 }
 
 body {
@@ -64,6 +64,7 @@ section {
 }
 
 h1 {
+  display: inline;
   color: #333;
 }
 
@@ -71,6 +72,11 @@ h1, p {
   font-size: 3em;
   line-height: 1.4em;
   font-weight: 900;
+}
+
+section div p:nth-child(even) {
+  
+  margin: 20px 0;
 }
 
 .woop {
@@ -88,43 +94,39 @@ h1, p {
   cursor: pointer;
 }
 
-@media (max-width: 1032px) and (min-width: 601px) {
+@media (max-width: 60em) {
   #content {
-    width: 98%;
+    width: 86%;
   }
 
   h1, p {
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 40em) {
   #content {
-    display: block;
-    margin-top: 60px;
+    width: 90%;
+    letter-spacing: 0.2em;
   }
 
+  #content,
   section {
-    display: block;
-  }
-}
-
-@media (max-width: 600px) and (min-width: 401px) {
-  #content {
-    width: 98%;
+    height: 100%;
+    height: -webkit-calc(100% - 120px);
   }
 
   h1, p {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25em) {
   #content {
-    width: 98%;
+    width: 90%;
   }
 
   h1, p {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }

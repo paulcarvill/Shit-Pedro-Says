@@ -1,1 +1,1 @@
-<p><%= content %></p>
+<p><%= content.replace(new RegExp('\r\n\r\n', 'g'), '</p><p>') %></p>

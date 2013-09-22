@@ -6,8 +6,6 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
   events:
     "click .next": "navigate"
-    "mouseover .next": "cycleImages"
-    "mouseout .next": "stopCycleImages"
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
@@ -20,19 +18,4 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
   navigate: (e) ->
     e.preventDefault()
-
-    # make the heading black again because we clicked while hovering
-    $('h1').toggleClass('woop');
-
     window.router.show( @model.collection.next(@model).get('id') )
-
-  cycleImages: ->
-
-    $('#imgs').show();
-    $('h1').toggleClass('woop');
-    $('.cycle-slideshow').cycle('resume');
-
-  stopCycleImages: ->
-    $('#imgs').hide();
-    $('.cycle-slideshow').cycle('pause');
-    $('h1').toggleClass('woop');
