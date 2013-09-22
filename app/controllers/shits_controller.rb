@@ -2,14 +2,12 @@ class ShitsController < ApplicationController
   
   before_action :set_shit, only: [:show]
 
-  # GET /shits
-  # GET /shits.json
+  caches_page :index, :show
+
   def index
     @shits = Shit.all.order('id ASC')
   end
 
-  # GET /shits/1
-  # GET /shits/1.json
   def show
     @shits = Shit.all
   end

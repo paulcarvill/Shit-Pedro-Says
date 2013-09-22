@@ -93,6 +93,32 @@ section div p:nth-child(even) {
   cursor: pointer;
 }
 
+#about {
+  background: #fff;
+  opacity: 0.3;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 200;
+  text-align: center;
+  padding: 0.5em 10px;
+  letter-spacing: normal;
+  color: #000;
+}
+
+.more {
+  display: none;
+  letter-spacing: 0.5em;
+}
+
+.q {
+  letter-spacing: normal;
+}
+
+#about a {
+  text-decoration: none;
+}
+
 @media (max-width: 60em) {
   #content {
     width: 86%;
