@@ -109,12 +109,6 @@ section div p:nth-child(even) {
     letter-spacing: 0.2em;
   }
 
-  #content,
-  section {
-    height: 100%;
-    height: -webkit-calc(100% - 120px);
-  }
-
   h1, p {
     font-size: 1.5em;
   }
