@@ -5,15 +5,20 @@ class ShitPedroSays.Views.AboutView extends Backbone.View
   el: '#about',
 
   events:
-    "mouseover": "show"
-    "mouseout": "hide"
+    "click": "showhide"
 
-  show: ->
-    $(@el).css('opacity', '0.4')
-    $('.q', @el).hide()
-    $('.more', @el).show()
+  showing: false,
 
-  hide: ->
-    $(@el).css('opacity', '0.3').css('width', 'auto')
-    $('.more', @el).hide()
-    $('.q', @el).show()
+  showhide: (e) ->
+    if e.target.nodeName != 'DIV' && e.target.nodeName != 'SPAN'
+      return
+    if !@showing
+      $(@el).css('opacity', '0.4')
+      $('.q', @el).hide()
+      $('.more', @el).show()
+      @showing = true
+    else
+      $(@el).css('opacity', '0.2').css('width', 'auto')
+      $('.more', @el).hide()
+      $('.q', @el).show()
+      @showing = false
