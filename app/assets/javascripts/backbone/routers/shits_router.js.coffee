@@ -70,7 +70,7 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
 
     # hide the pedro images when we load a new Shit in
     $('#imgs').hide();
-    #$('html').css('background-color', @colours[@col]);
+    $('html').css('background-color', @colours[@col]);
     
     # get requested Shit from collection, or load most recent
     if id == undefined
