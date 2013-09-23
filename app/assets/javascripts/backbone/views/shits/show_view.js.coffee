@@ -4,8 +4,11 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
   template: JST["backbone/templates/shits/show"]
   nextTemplate: JST["backbone/templates/shits/next"]
 
-  events:
-    "click .next": "navigate"
+  events: () -> 
+    if Modernizr.touch
+      return "touchstart .next" : "navigate"
+    else
+      return "click .next": "navigate"
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
