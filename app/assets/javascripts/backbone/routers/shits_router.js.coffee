@@ -86,6 +86,9 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     @view = new ShitPedroSays.Views.Shits.ShowView(model: shit, colour: @colours[@col])
     $("#shit").html(@view.render().el)
 
+    # hide about text
+    window.about.hide()
+
     if @col == @colours.length-1
       @col = 0
     else @col++
