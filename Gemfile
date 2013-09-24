@@ -16,8 +16,6 @@ gem 'coffee-rails', '4.0.0'
 gem 'jquery-rails', '2.2.1'
 gem 'jbuilder', '1.0.2'
 gem "rails-backbone"
-gem 'actionpack-page_caching'
-gem 'actionpack-action_caching'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

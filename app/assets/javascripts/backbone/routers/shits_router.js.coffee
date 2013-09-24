@@ -82,6 +82,8 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
       Backbone.history.navigate('/shits/' + shit.id, true);
       document.title = "Shit Pedro Says: " + shit.get('content');
 
+    window.heading.stopCycleImages()
+
     # send view new colour
     @view = new ShitPedroSays.Views.Shits.ShowView(model: shit, colour: @colours[@col])
     $("#shit").html(@view.render().el)

@@ -4,16 +4,27 @@ class ShitPedroSays.Views.Heading.ShowView extends Backbone.View
 
   el: 'h1',
 
-  events:
-    "mouseover": "cycleImages"
-    "mouseout": "stopCycleImages"
+  woop: false,
+
+  events: () -> 
+    if Modernizr.touch
+      "touchstart": "cycleImages"
+    else
+      "mouseover": "cycleImages"
+      "mouseout": "stopCycleImages"
 
   cycleImages: ->
-    $('#imgs').show();
-    $(@el).toggleClass('woop');
-    $('.cycle-slideshow').cycle('resume');
+    if !@woop
+      $('#imgs').show();
+      $(@el).toggleClass('woop');
+      $('.cycle-slideshow').cycle('resume');
+      @woop = true
+    else
+      stopCycleImages()
 
   stopCycleImages: ->
-    $('#imgs').hide();
-    $('.cycle-slideshow').cycle('pause');
-    $(@el).toggleClass('woop');
+    if @woop  
+      $('#imgs').hide();
+      $('.cycle-slideshow').cycle('pause');
+      $(@el).toggleClass('woop');
+      @woop = false
