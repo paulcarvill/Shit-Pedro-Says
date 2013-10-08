@@ -77,4 +77,6 @@ ShitPedroSays::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.assets.precompile += %w[active_admin/active_admin.css active_admin/active_admin.js]
 end

@@ -8,4 +8,5 @@
 //= require backbone/shit_pedro_says
 //= require cycle2
 //= require modernizr
-//= require_tree .
+//= require_directory ./backbone
+//= require_directory .
