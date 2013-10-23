@@ -80,3 +80,4 @@ ShitPedroSays::Application.configure do
 
   config.assets.precompile += %w[active_admin/active_admin.css active_admin/active_admin.js]
 end
+
