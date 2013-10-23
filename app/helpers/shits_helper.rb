@@ -1,5 +1,5 @@
 module ShitsHelper
   def twitter_feed
-      Twitter.user_timeline() #limits array to 5 items
+      Twitter.user_timeline()
   end
 end
