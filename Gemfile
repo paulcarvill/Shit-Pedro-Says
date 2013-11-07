@@ -17,6 +17,7 @@ gem 'jbuilder', '1.0.2'
 gem "rails-backbone"
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'twitter', '4.8.1'
+gem 'actionpack-xml_parser'
 
 group :production do
   gem 'pg', '0.15.1'
