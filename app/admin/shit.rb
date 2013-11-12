@@ -1,10 +1,12 @@
 ActiveAdmin.register Shit do
 
 	controller do
-    	def permitted_params
-		params.permit shit: [:content]
-    	end
-  	end
+    def permitted_params
+		  params.permit shit: [:content]
+    end
+
+   
+  end
 
   	# tweet the newly created Shit out using the @shit_pedro_says account
   	after_create do |shit|

@@ -76,10 +76,11 @@ class ShitPedroSays.Routers.ShitsRouter extends Backbone.Router
     if id == undefined
       shit = @shits.at(0)
     else
-      shit = @shits.get(id)
+      # use slug or id to find Shit
+      shit = @shits.where({ slug: id })[0] || @shits.get(id);
 
     if id != undefined
-      Backbone.history.navigate('/shits/' + shit.id, true);
+      Backbone.history.navigate('/shits/' + shit.get('slug'), true);
       document.title = "Shit Pedro Says: " + shit.get('content');
 
     window.heading.stopCycleImages()

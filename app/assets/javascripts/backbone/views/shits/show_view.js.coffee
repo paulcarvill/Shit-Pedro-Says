@@ -21,4 +21,4 @@ class ShitPedroSays.Views.Shits.ShowView extends Backbone.View
 
   navigate: (e) ->
     e.preventDefault()
-    window.router.show( @model.collection.next(@model).get('id') )
+    window.router.show( @model.collection.next(@model).get('slug') )

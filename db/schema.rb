@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007145841) do
+ActiveRecord::Schema.define(version: 20131108092555) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20131007145841) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "shits", ["slug"], name: "index_shits_on_slug", unique: true
 
 end

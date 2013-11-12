@@ -5,6 +5,9 @@ ShitPedroSays::Application.routes.draw do
   ActiveAdmin.routes(self)
   
   resources :shits
-  
+
   root 'shits#index'
+
+  get '/random' => 'shits#random'
+
 end
