@@ -22,5 +22,12 @@ module ShitPedroSays
     config.action_controller.perform_caching = true
 
     config.middleware.insert_after ActionDispatch::ParamsParser, ActionDispatch::XmlParamsParser
+
+    # Allow cross-site HTTP requests 
+    config.action_dispatch.default_headers = {
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Request-Method' => '*'
+    }
+
   end
 end
